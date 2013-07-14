@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://rahult.github.io/sitemap.xml 
