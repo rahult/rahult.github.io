@@ -1,15 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://rahult.github.io/blog/2013/07/14/karo-a-commandline-tool/</loc>
+        <lastmod>2013-07-15T00:03:50+09:30</lastmod>
+    </url>
+    <url>
         <loc>http://rahult.github.io/blog/archives/</loc>
-        <lastmod>2013-07-14T22:13:14+09:30</lastmod>
+        <lastmod>2013-07-14T23:54:29+09:30</lastmod>
     </url>
     <url>
         <loc>http://rahult.github.io/</loc>
-        <lastmod>2013-07-14T22:13:14+09:30</lastmod>
+        <lastmod>2013-07-15T00:03:50+09:30</lastmod>
+    </url>
+    <url>
+        <loc>http://rahult.github.io/projects/</loc>
+        <lastmod>2013-07-14T23:54:29+09:30</lastmod>
     </url>
     <url>
         <loc>http://rahult.github.io/robots.txt</loc>
-        <lastmod>2013-07-14T22:13:14+09:30</lastmod>
+        <lastmod>2013-07-14T22:24:12+09:30</lastmod>
     </url>
 </urlset>

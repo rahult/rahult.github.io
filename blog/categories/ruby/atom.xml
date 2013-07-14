@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | Lazily Evaluated Thoughts]]></title>
+  <link href="http://rahult.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://rahult.github.io/"/>
+  <updated>2013-07-15T00:03:58+09:30</updated>
+  <id>http://rahult.github.io/</id>
+  <author>
+    <name><![CDATA[Rahul Trikha]]></name>
+    
+  </author>
+  <generator uri="http://ryandeussing.com/">Ryan Deussing</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Karo - A command line companion for a Rails application]]></title>
+    <link href="http://rahult.github.io/blog/2013/07/14/karo-a-commandline-tool/"/>
+    <updated>2013-07-14T22:10:00+09:30</updated>
+    <id>http://rahult.github.io/blog/2013/07/14/karo-a-commandline-tool</id>
+    <content type="html"><![CDATA[<p><strong>Karo</strong> is a command line companion for a rails application which makes performing routine commands locally or on the server easier.</p>
+
+<p>Github &ndash; <a href="https://github.com/rahult/karo">https://github.com/rahult/karo</a><br/>
+Website &ndash; <a href="http://rahult.github.io/karo/">http://rahult.github.io/karo/</a></p>
+
+<p>Example of things it can do, for rest please refer to <code>karo help</code></p>
+
+<p><code>bash
+karo db pull # Will sync the production MySQL database on to local machine
+karo db console # Will open MySQL console on the server
+karo console # Will open Rails console on the server
+karo assets pull -e staging # Will sync the dragonfly assets from staging on to the local machine
+karo log -f # Will tail the production log with -f argument
+</code></p>
+
+<p>You can also write your custom commands</p>
+
+<p><code>bash
+karo server {command} # Will try to find a command from .karo.yml or execute the one provided on the server
+karo client {command} # Will try to find a command from .karo.yml or execute the one provided on the client
+</code></p>
+
+<h2>Few Assumptions</h2>
+
+<ul>
+<li>You have SSH access to your servers</li>
+<li>You have the <a href="https://github.com/capistrano/capistrano">Capistrano</a> deploy directory structure on your server<br/>
+[deploy_to]<br/>
+[deploy_to]/releases<br/>
+[deploy_to]/releases/20080819001122<br/>
+[deploy_to]/releases/&hellip;<br/>
+[deploy_to]/shared<br/>
+[deploy_to]/shared/config/database.yml<br/>
+[deploy_to]/shared/log<br/>
+[deploy_to]/shared/pids<br/>
+[deploy_to]/shared/system<br/>
+[deploy_to]/current &ndash;> [deploy_to]/releases/20100819001122</li>
+<li>You are using MySQL as your database server</li>
+<li>You are using Dragonfly to store your assets</li>
+</ul>
+
+
+<p>I am working on supporting other databases and assets managers for future releases</p>
+
+<h2>Installation</h2>
+
+<p>Karo is released as a Ruby Gem. The gem is to be installed within a Ruby
+on Rails application. To install, simply add the following to your Gemfile:</p>
+
+<p>```ruby</p>
+
+<h1>Gemfile</h1>
+
+<p>gem &lsquo;karo&rsquo;
+```</p>
+
+<p>After updating your bundle, you can use Karo function from the command line</p>
+
+<h2>Usage (command line)</h2>
+
+<p><code>bash
+karo help
+</code></p>
+
+<h2>Default configuration file (.karo.yml)</h2>
+
+<p>```yml .karo.yml
+production:
+  host: example.com
+  user: deploy
+  path: /data/app_name
+  commands:</p>
+
+<pre><code>server:
+  memory: watch vmstat -sSM
+  top_5_memory: ps aux | sort -nk +4 | tail
+client:
+  deploy: cap production deploy
+</code></pre>
+
+<p>staging:
+  host: example.com
+  user: deploy
+  path: /data/app_name
+  commands:</p>
+
+<pre><code>server:
+  memory: vmstat -sSM
+client:
+  deploy: ey deploy -e staging -r staging
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>
