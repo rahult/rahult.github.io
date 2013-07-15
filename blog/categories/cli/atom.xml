@@ -4,7 +4,7 @@
   <title><![CDATA[Category: CLI | Lazily Evaluated Thoughts]]></title>
   <link href="http://rahult.github.io/blog/categories/cli/atom.xml" rel="self"/>
   <link href="http://rahult.github.io/"/>
-  <updated>2013-07-15T09:27:51+09:30</updated>
+  <updated>2013-07-15T10:44:26+09:30</updated>
   <id>http://rahult.github.io/</id>
   <author>
     <name><![CDATA[Rahul Trikha]]></name>
@@ -44,16 +44,16 @@ karo client {command} # Will try to find a command from .karo.yml or execute the
 
 <ul>
 <li>You have SSH access to your servers</li>
-<li>You have the <a href="https://github.com/capistrano/capistrano">Capistrano</a> deploy directory structure on your server
-[deploy_to]
-[deploy_to]/releases
-[deploy_to]/releases/20080819001122
-[deploy_to]/releases/&hellip;
-[deploy_to]/shared
-[deploy_to]/shared/config/database.yml
-[deploy_to]/shared/log
-[deploy_to]/shared/pids
-[deploy_to]/shared/system
+<li>You have the <a href="https://github.com/capistrano/capistrano">Capistrano</a> deploy directory structure on your server<br/>
+[deploy_to]<br/>
+[deploy_to]/releases<br/>
+[deploy_to]/releases/20080819001122<br/>
+[deploy_to]/releases/&hellip;<br/>
+[deploy_to]/shared<br/>
+[deploy_to]/shared/config/database.yml<br/>
+[deploy_to]/shared/log<br/>
+[deploy_to]/shared/pids<br/>
+[deploy_to]/shared/system<br/>
 [deploy_to]/current &ndash;> [deploy_to]/releases/20100819001122</li>
 <li>You are using MySQL as your database server</li>
 <li>You are using Dragonfly to store your assets</li>
